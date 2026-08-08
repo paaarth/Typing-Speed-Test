@@ -18,13 +18,20 @@ export default function TopicsTab() {
 
   const load = () => {
     setLoading(true);
-    Promise.all([fetchAdminTopics(), fetchValidIcons()])
-      .then(([t, i]) => {
-        setTopics(t);
-        setIcons(i);
-        setIcon((current) => current || (i.length > 0 ? i[0] : ''));
+    Promise.allSettled([fetchAdminTopics(), fetchValidIcons()])
+      .then(([topicsResult, iconsResult]) => {
+        if (topicsResult.status === 'fulfilled') {
+          setTopics(topicsResult.value);
+          setError('');
+        } else {
+          setError(topicsResult.reason?.message || 'Could not load topics.');
+        }
+
+        if (iconsResult.status === 'fulfilled') {
+          setIcons(iconsResult.value);
+          setIcon((current) => current || (iconsResult.value.length > 0 ? iconsResult.value[0] : ''));
+        }
       })
-      .catch(() => setError('Could not load topics.'))
       .finally(() => setLoading(false));
   };
 

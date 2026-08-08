@@ -1,6 +1,8 @@
 package com.speedtype.exception;
 
 import com.speedtype.dto.ErrorResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(ApiException.class)
     public ResponseEntity<ErrorResponse> handleApiException(ApiException ex) {
@@ -35,8 +39,13 @@ public class GlobalExceptionHandler {
                 .body(toError(message, 400));
     }
 
+    /** The catch-all for anything not specifically handled above — genuine bugs,
+     *  not expected validation/auth failures. Those get a clean generic message
+     *  (never leak internals to the client), but the full exception is logged
+     *  here so it's actually visible in the server console for debugging. */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneral(Exception ex) {
+        logger.error("Unhandled exception", ex);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(toError("Something went wrong. Please try again.", 500));
     }

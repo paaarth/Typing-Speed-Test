@@ -13,8 +13,12 @@ public class Paragraph {
     @Column(nullable = false, length = 2000)
     private String text;
 
-    /** A real relationship now (Topic used to be an enum) — see Topic.java. */
-    @ManyToOne(fetch = FetchType.LAZY)
+    /** A real relationship now (Topic used to be an enum) — see Topic.java.
+     *  EAGER on purpose: Topic is a small lookup entity (id/name/icon only), and
+     *  every place that reads a paragraph's topic does so after the fetching
+     *  transaction has already closed (open-in-view is off). LAZY would throw
+     *  LazyInitializationException there instead of quietly joining it in. */
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "topic_id", nullable = false)
     private Topic topic;
 

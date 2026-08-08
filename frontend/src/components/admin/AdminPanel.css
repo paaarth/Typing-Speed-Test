@@ -4,6 +4,35 @@
   margin-bottom: 24px;
 }
 
+.admin-topic-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.admin-topic-filter .filter-btn {
+  padding: 8px 14px;
+  font-size: 0.8rem;
+}
+
+.word-count-hint {
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
+  font-family: var(--font-mono);
+  margin: -6px 0 0;
+}
+
+.word-count-hint-warn {
+  color: var(--color-error-text);
+  font-weight: 700;
+}
+
+.admin-row-topic-orphan {
+  color: var(--color-error-text);
+  font-style: italic;
+}
+
 .admin-add-btn {
   display: flex;
   align-items: center;

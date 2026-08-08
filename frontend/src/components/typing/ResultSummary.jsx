@@ -38,9 +38,6 @@ export default function ResultSummary({ result, isAuthenticated, saveState, onTr
         <button className="keycap keycap-ghost" onClick={onTryAgain}>
           <RotateCcw size={16} /> Try again
         </button>
-        <button className="keycap keycap-strawberry" onClick={onNewParagraph}>
-          <Shuffle size={16} /> New paragraph
-        </button>
       </div>
     </div>
   );

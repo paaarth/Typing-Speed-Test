@@ -86,7 +86,7 @@ console **once**:
 
 ```
 username: admin
-password: admin
+password: ChangeMe123!
 ```
 
 Log in with these at `/login`, then go to `/admin` to manage paragraphs and

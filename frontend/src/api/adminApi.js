@@ -22,6 +22,10 @@ export async function fetchAdminTopics() {
   const { data } = await client.get('/admin/topics');
   return data;
 }
+export async function fetchWordLimits() {
+  const { data } = await client.get('/admin/paragraphs/word-limits');
+  return data;
+}
 export async function fetchValidIcons() {
   const { data } = await client.get('/admin/topics/icons');
   return data.icons;
