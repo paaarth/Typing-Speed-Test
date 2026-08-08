@@ -1,0 +1,80 @@
+.navbar {
+  padding: 18px 0;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1080px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-ink);
+}
+
+.navbar-brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--color-banana);
+  color: var(--color-ink);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-link {
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.navbar-link:hover {
+  color: var(--color-ink);
+  border-color: var(--color-strawberry);
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-username {
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.navbar-btn {
+  padding: 9px 16px;
+  font-size: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .navbar-username {
+    display: inline;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-links {
+    display: none;
+  }
+}

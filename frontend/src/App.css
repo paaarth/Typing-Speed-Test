@@ -1,0 +1,29 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+  padding: 32px 0 64px;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.page-subtitle {
+  color: var(--color-ink-muted);
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+.loading-text,
+.empty-text {
+  color: var(--color-ink-muted);
+  font-family: var(--font-mono);
+  padding: 24px 0;
+  text-align: center;
+}
