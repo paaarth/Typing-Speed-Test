@@ -91,8 +91,6 @@ Log in with these at `/login`, then go to `/admin` to manage paragraphs and
 topics. **Change this password immediately** — there's no in-app "change
 password" screen yet, so for now that means updating the row directly in the
 database (or registering a different admin account and removing this one).
-Full explanation of how the role/admin system works:
-[ADMIN_PANEL.md](./ADMIN_PANEL.md).
 
 ### 4. Frontend
 
