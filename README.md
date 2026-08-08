@@ -27,9 +27,7 @@ Spring's official migration guide when you're ready.
 - Live typing indicator: per-character correct/incorrect/current highlighting, live WPM/accuracy/time/error readouts
 - Results auto-save to your profile when signed in; guests can still take tests
 - Profile page: best/average WPM, average accuracy, best WPM per difficulty, a speed-over-time graph, and a filterable history table
-- Admin panel (`/admin`) to create/edit/delete paragraphs and topics — see
-  [ADMIN_PANEL.md](./ADMIN_PANEL.md) for exactly how the role system and dynamic
-  topics work under the hood
+- Admin panel (`/admin`) to create/edit/delete paragraphs and topics
 - Candy-pastel "keycap" UI — see Design notes below
 
 ## Project Structure
