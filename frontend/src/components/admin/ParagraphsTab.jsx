@@ -28,8 +28,6 @@ export default function ParagraphsTab() {
   const [difficulty, setDifficulty] = useState('EASY');
   const [saving, setSaving] = useState(false);
 
-  // Each request is independent — a failure in one (e.g. paragraphs, if some
-  // pre-date the topics table) no longer blocks the others from loading.
   const load = () => {
     setLoading(true);
     Promise.allSettled([fetchAdminParagraphs(), fetchAdminTopics(), fetchWordLimits()])
@@ -64,7 +62,7 @@ export default function ParagraphsTab() {
   };
 
   const startEdit = (p) => {
-    if (!p.topicId) return; // orphaned row — can only be deleted, not edited
+    if (!p.topicId) return;
     setEditingId(p.id);
     setText(p.text);
     setTopicId(String(p.topicId));

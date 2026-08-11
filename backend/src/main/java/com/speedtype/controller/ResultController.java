@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/** All endpoints here require a valid JWT (see SecurityConfig); Spring injects the
- *  authenticated principal automatically, and authentication.getName() is the username. */
 @RestController
 @RequestMapping("/api/results")
 public class ResultController {

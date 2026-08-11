@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-/** Everything under /api/admin/** requires the ADMIN role — enforced centrally in
- *  SecurityConfig, not per-method here, so there's one place that decides who's an admin. */
 @RestController
 @RequestMapping("/api/admin/topics")
 public class AdminTopicController {

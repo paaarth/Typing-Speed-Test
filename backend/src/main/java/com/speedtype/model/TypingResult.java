@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
-/** One completed typing test. Topic/difficulty are denormalized (copied from the
- *  paragraph at submit time) so history/stats queries don't need a join, and so a
- *  result stays accurate even if a paragraph is edited later. */
 @Entity
 @Table(name = "typing_results")
 public class TypingResult {

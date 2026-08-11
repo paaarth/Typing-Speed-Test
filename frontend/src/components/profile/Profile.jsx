@@ -31,7 +31,6 @@ export default function Profile() {
     return history.filter((r) => r.difficulty === filter);
   }, [history, filter]);
 
-  // History comes back newest-first; the graph should read left-to-right as a timeline.
   const chronological = useMemo(() => [...filteredHistory].reverse(), [filteredHistory]);
 
   return (

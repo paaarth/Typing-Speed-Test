@@ -56,9 +56,6 @@ export default function TypingTest() {
     })
       .then(() => setSaveState('saved'))
       .catch(() => setSaveState('error'));
-    // Intentionally only re-runs when isFinished flips true; the other values are
-    // already final by that point (typing is locked once the test finishes).
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [engine.isFinished]);
 
   const handleNewParagraph = () => loadParagraph(topic, difficulty);

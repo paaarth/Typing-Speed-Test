@@ -26,9 +26,6 @@ public class ParagraphController {
         return paragraphService.getAllTopics();
     }
 
-    /** Topic is now a plain name string (Topic stopped being a fixed enum once it
-     *  became admin-manageable), matched case-sensitively against the topics table.
-     *  Difficulty is still a real enum, so Spring still converts that one automatically. */
     @GetMapping("/random")
     public ParagraphResponse getRandomParagraph(@RequestParam String topic, @RequestParam Difficulty difficulty) {
         return paragraphService.getRandomParagraph(topic, difficulty);

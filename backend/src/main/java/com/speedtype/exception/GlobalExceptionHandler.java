@@ -39,10 +39,6 @@ public class GlobalExceptionHandler {
                 .body(toError(message, 400));
     }
 
-    /** The catch-all for anything not specifically handled above — genuine bugs,
-     *  not expected validation/auth failures. Those get a clean generic message
-     *  (never leak internals to the client), but the full exception is logged
-     *  here so it's actually visible in the server console for debugging. */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneral(Exception ex) {
         logger.error("Unhandled exception", ex);

@@ -26,8 +26,7 @@ public class AdminParagraphController {
         return adminParagraphService.getAll();
     }
 
-    /** {"EASY": [15, 40], "MEDIUM": [30, 65], "HARD": [40, 100]} — [min, max] words.
-     *  Lets the admin form show live guidance instead of finding out only on submit. */
+    // "EASY": [15, 40], "MEDIUM": [30, 65], "HARD": [40, 100] words.
     @GetMapping("/word-limits")
     public Map<String, int[]> getWordLimits() {
         Map<String, int[]> limits = new LinkedHashMap<>();

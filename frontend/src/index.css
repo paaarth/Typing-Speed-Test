@@ -1,9 +1,4 @@
-/* ============================================================
-   SpeedType design tokens — "pastel mechanical keyboard" theme.
-   Fonts are loaded in index.html (Baloo 2 / Figtree / Space Mono).
-   ============================================================ */
 :root {
-  /* Palette — candy pastels, kept soft enough to be easy on the eyes */
   --color-bg: #FBF7FF;
   --color-surface: #FFFFFF;
   --color-surface-alt: #F5F0FC;
@@ -94,16 +89,11 @@ button {
   color: var(--color-ink);
 }
 
-/* Soft custom scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--color-ink-faint); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-lavender); }
 
-/* ============================================================
-   Keycap system — the app's signature component: buttons, chips
-   and toggles all read as soft, pressable keyboard keys.
-   ============================================================ */
 .keycap {
   border: none;
   border-radius: var(--radius-md);
@@ -178,7 +168,6 @@ button {
   min-width: 220px;
 }
 
-/* Generic card surface */
 .card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);

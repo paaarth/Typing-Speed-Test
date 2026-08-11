@@ -1,11 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
 
-/**
- * Drives a single typing test: tracks what's been typed against the target
- * paragraph and derives WPM / accuracy / elapsed time live as state changes.
- * Backspacing is allowed (errors reflect the *current* mismatch count, not a
- * running history of every keystroke), which matches how most typing tests work.
- */
 export function useTypingEngine(paragraphText) {
   const [typedText, setTypedText] = useState('');
   const [startTime, setStartTime] = useState(null);
@@ -19,12 +13,12 @@ export function useTypingEngine(paragraphText) {
     setElapsed(0);
   }, []);
 
-  // Whenever a new paragraph is loaded, start clean.
+  // whenever a new paragraph is loaded, it start clean.
   useEffect(() => {
     reset();
   }, [paragraphText, reset]);
 
-  // Live-updating timer while a test is in progress.
+  // live updating timer while a test is in progress.
   useEffect(() => {
     if (!startTime || endTime) return undefined;
     const interval = setInterval(() => setElapsed((Date.now() - startTime) / 1000), 200);

@@ -13,13 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Populates the topics and paragraphs tables on first startup (skipped if
- * paragraphs already exist, so it's safe across restarts). Two original
- * paragraphs per topic/difficulty pair. Topics are seeded first since every
- * paragraph now references a Topic row rather than a fixed enum value —
- * admins can add more topics later through the admin panel.
- */
 @Component
 public class DataSeeder implements CommandLineRunner {
 

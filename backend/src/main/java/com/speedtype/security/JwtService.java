@@ -11,8 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.function.Function;
 
-/** Issues and validates the stateless JWTs used for authentication.
- *  Uses the HMAC-SHA256 fluent API from jjwt 0.13.x (Jwts.builder()... / Jwts.parser()...). */
 @Service
 public class JwtService {
 

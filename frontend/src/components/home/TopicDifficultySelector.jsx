@@ -1,8 +1,6 @@
 import { getTopicIcon } from '../../utils/topicIcons.js';
 import { formatLabel } from '../../utils/format.js';
 
-// Topics are dynamic now (admin-managed), so accent colors just cycle through a
-// fixed palette by position rather than being keyed to specific topic names.
 const ACCENTS = ['strawberry', 'mint', 'blueberry', 'lavender', 'banana'];
 const DIFFICULTIES = ['EASY', 'MEDIUM', 'HARD'];
 

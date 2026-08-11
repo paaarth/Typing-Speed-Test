@@ -2,10 +2,6 @@ package com.speedtype.model;
 
 import jakarta.persistence.*;
 
-/** Topics used to be a fixed Java enum. They're now a real table so an admin can
- *  add/rename/remove them at runtime — see AdminTopicController. `icon` is one of
- *  a small fixed set of keys the frontend knows how to render (see the admin
- *  service for the allowed list), not free text. */
 @Entity
 @Table(name = "topics")
 public class Topic {

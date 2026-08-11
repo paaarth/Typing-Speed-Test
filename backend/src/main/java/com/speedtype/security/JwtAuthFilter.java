@@ -14,9 +14,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-/** Reads the "Authorization: Bearer <token>" header on every request, and if the
- *  token is valid, populates the SecurityContext so downstream code sees an
- *  authenticated user. Runs once before Spring Security's own auth filter. */
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
